@@ -1,0 +1,26 @@
+{
+  "name": "notificationservice",
+  "version": "1.0.0",
+  "description": "service for notification",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elite-scrum-team/NotificationService.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elite-scrum-team/NotificationService/issues"
+  },
+  "homepage": "https://github.com/elite-scrum-team/NotificationService#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
