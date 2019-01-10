@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/elite-scrum-team/NotificationService#readme",
   "dependencies": {
+    "@sendgrid/mail": "^6.3.1",
     "express": "^4.16.4"
   },
   "devDependencies": {
