@@ -9,7 +9,7 @@ router.post('/register', async (req, res) => {
       await controller.sendRegistrationEmail(payload.email, payload.name, payload.password)
     )
   } else {
-    await res.send({})
+    await res.send(400)
   }
 });
 
@@ -20,7 +20,29 @@ router.post('/newpassword', async (req, res) => {
       await controller.sendNewPassword(payload.email, payload.name, payload.password)
     )
   } else {
-    await res.send({})
+    await res.send(400)
+  }
+});
+
+router.post('/newwarningstatus', async (req, res) => {
+  const payload = req.body.payload;
+  if (payload.email) {
+    await res.send(
+      await controller.newWarningStatus(payload.email, payload.title, payload.status, payload.comment)
+    )
+  } else {
+    await res.send(400)
+  }
+});
+
+router.post('/newcomment', async (req, res) => {
+  const payload = req.body.payload;
+  if (payload.email) {
+    await res.send(
+      await controller.newWarningStatus(payload.email, payload.title, payload.name, payload.comment)
+    )
+  } else {
+    await res.send(400)
   }
 });
 
