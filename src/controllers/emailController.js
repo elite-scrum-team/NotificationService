@@ -36,7 +36,7 @@ module.exports = {
     return sgMail.send(msg);
   },
 
-  newWarningStatus(email, title, status, comment) {
+  updatedWarningStatus(email, title, status, comment) {
     const msg = {
       to: email,
       from: host,

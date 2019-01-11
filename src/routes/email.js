@@ -24,11 +24,11 @@ router.post('/newpassword', async (req, res) => {
   }
 });
 
-router.post('/newwarningstatus', async (req, res) => {
+router.post('/updatedwarningstatus', async (req, res) => {
   const payload = req.body.payload;
   if (payload.email) {
     await res.send(
-      await controller.newWarningStatus(payload.email, payload.title, payload.status, payload.comment)
+      await controller.updatedWarningStatus(payload.email, payload.title, payload.status, payload.comment)
     )
   } else {
     await res.send(400)
