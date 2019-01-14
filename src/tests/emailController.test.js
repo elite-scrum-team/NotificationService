@@ -8,7 +8,7 @@ describe('emailController test', () => {
             'Nikolai',
             'FSRKGFgrgjo48'
         );
-        expect(res.StatusCode).toBe(200);
+        expect(res[0].statusCode).toBe(202);
     });
 
     test('Testing sendNewPassword', async () => {
@@ -17,7 +17,7 @@ describe('emailController test', () => {
             'Nikolai',
             'GRoih8iyg98U'
         );
-        expect(res.StatusCode).toBe(200);
+        expect(res[0].statusCode).toBe(202);
     });
 
     test('Testing updatedWarningStatus', async () => {
@@ -27,7 +27,7 @@ describe('emailController test', () => {
             'Work in progress',
             'Det kommer til å bli enda større før det blir mindre'
         );
-        expect(res.StatusCode).toBe(200);
+        expect(res[0].statusCode).toBe(202);
     });
 
     test('Testing newWarningComment', async () => {
@@ -37,6 +37,6 @@ describe('emailController test', () => {
             'Lei_innbygger_104',
             'De må jo snart bli ferdige, dette tar jo altfor lang tid'
         );
-        expect(res.StatusCode).toBe(200);
+        expect(res[0].statusCode).toBe(202);
     });
 });

@@ -9,6 +9,6 @@ describe('smsController test', () => {
             'Work in progress',
             'Det kommer til å bli enda større før det blir mindre'
         );
-        expect(res.error_code).toBe();
+        expect(res.errorCode).toBe(null);
     });
 });
