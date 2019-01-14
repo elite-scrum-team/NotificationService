@@ -1,3 +1,4 @@
+require('dotenv').config();
 const controller = require('../controllers/smsController');
 
 describe('smsController test', () => {

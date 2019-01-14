@@ -8,7 +8,7 @@ const hostNr = env === 'development' ? '+4784028949' : '+4759447127';
 module.exports = {
     updatedWarningStatus(telephone, title, status, comment) {
         const msg = {
-            body: title + ' har blitt satt til ' + status + (comment !== '') ? ' med kommentaren ' + comment : null,
+            body: title + ' har blitt satt til "' + status + '"' +  ((comment !== '') ? ' med kommentaren "' + comment + '"' : null),
             to: telephone,
             from: hostNr,
         };
