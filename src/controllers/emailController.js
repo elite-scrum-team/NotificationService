@@ -1,7 +1,7 @@
 const sgMail = require('@sendgrid/mail');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-const host = 'noreply@hverdagshelt.com';
+const host = 'HverdagsHelt@hverdagsheltprosjekt.com';
 const unsub_link = 'imgur.com';
 const unsub_pref = 'nrk.no';
 
