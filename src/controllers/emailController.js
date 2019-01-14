@@ -40,7 +40,7 @@ module.exports = {
         const msg = {
             to: email,
             from: host,
-            templateId: 'd-eecfa27c0b85422f90d97ef80acbd072',
+            templateId: 'd-87ecb13d6be24b5eb1a321e61121b8c6',
             dynamic_template_data: {
                 Warning_Title: title,
                 Warning_Status: status,
@@ -52,11 +52,11 @@ module.exports = {
         return sgMail.send(msg);
     },
 
-    newWarningStatus(email, title, name, comment) {
+    newWarningComment(email, title, name, comment) {
         const msg = {
             to: email,
             from: host,
-            templateId: 'd-eecfa27c0b85422f90d97ef80acbd072',
+            templateId: 'd-472fb23477fa4c51b3602c9b516c6dc2',
             dynamic_template_data: {
                 Warning_Title: title,
                 Name_Commenter: name,

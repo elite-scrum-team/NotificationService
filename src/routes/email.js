@@ -51,7 +51,7 @@ router.post('/newcomment', async (req, res) => {
     const payload = req.body.payload;
     if (payload.email) {
         await res.send(
-            await controller.newWarningStatus(
+            await controller.newWarningComment(
                 payload.email,
                 payload.title,
                 payload.name,
