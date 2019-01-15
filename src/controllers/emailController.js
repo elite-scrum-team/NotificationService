@@ -16,9 +16,10 @@ module.exports = {
                 Generated_Password: password,
                 Unsubscribe_Link: unsub_link,
                 Unsubscribe_Preferences: unsub_pref,
-            }
+            },
         };
-        return sgMail.send(msg);
+        const res = sgMail.send(msg);
+        return res[0].statusCode;
     },
 
     sendNewPassword(email, name, password) {
@@ -31,9 +32,10 @@ module.exports = {
                 Generated_Password: password,
                 Unsubscribe_Link: unsub_link,
                 Unsubscribe_Preferences: unsub_pref,
-            }
+            },
         };
-        return sgMail.send(msg);
+        const res = sgMail.send(msg);
+        return res[0].statusCode;
     },
 
     updatedWarningStatus(email, title, status, comment) {
@@ -47,9 +49,10 @@ module.exports = {
                 Warning_Comment: comment,
                 Unsubscribe_Link: unsub_link,
                 Unsubscribe_Preferences: unsub_pref,
-            }
+            },
         };
-        return sgMail.send(msg);
+        const res = sgMail.send(msg);
+        return res[0].statusCode;
     },
 
     newWarningComment(email, title, name, comment) {
@@ -63,8 +66,9 @@ module.exports = {
                 Warning_Comment: comment,
                 Unsubscribe_Link: unsub_link,
                 Unsubscribe_Preferences: unsub_pref,
-            }
+            },
         };
-        return sgMail.send(msg);
+        const res = sgMail.send(msg);
+        return res[0].statusCode;
     },
 };

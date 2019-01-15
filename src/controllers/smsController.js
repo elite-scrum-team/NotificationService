@@ -23,6 +23,11 @@ module.exports = {
             to: telephone,
             from: hostNr,
         };
-        return client.messages.create(msg);
+        const res = client.messages.create(msg);
+        if (res.errorCode == null) {
+            return 200;
+        } else {
+            return res.errorCode;
+        }
     },
 };
