@@ -6,7 +6,7 @@ const unsub_link = 'imgur.com';
 const unsub_pref = 'nrk.no';
 
 module.exports = {
-    sendRegistrationEmail(email, name, password) {
+    async sendRegistrationEmail(email, name, password) {
         const msg = {
             to: email,
             from: host,
@@ -18,11 +18,11 @@ module.exports = {
                 Unsubscribe_Preferences: unsub_pref,
             },
         };
-        const res = sgMail.send(msg);
+        const res = await sgMail.send(msg);
         return res[0].statusCode;
     },
 
-    sendNewPassword(email, name, password) {
+    async sendNewPassword(email, name, password) {
         const msg = {
             to: email,
             from: host,
@@ -34,11 +34,11 @@ module.exports = {
                 Unsubscribe_Preferences: unsub_pref,
             },
         };
-        const res = sgMail.send(msg);
+        const res = await sgMail.send(msg);
         return res[0].statusCode;
     },
 
-    updatedWarningStatus(email, title, status, comment) {
+    async updatedWarningStatus(email, title, status, comment) {
         const msg = {
             to: email,
             from: host,
@@ -51,11 +51,11 @@ module.exports = {
                 Unsubscribe_Preferences: unsub_pref,
             },
         };
-        const res = sgMail.send(msg);
+        const res = await sgMail.send(msg);
         return res[0].statusCode;
     },
 
-    newWarningComment(email, title, name, comment) {
+    async newWarningComment(email, title, name, comment) {
         const msg = {
             to: email,
             from: host,
@@ -68,7 +68,7 @@ module.exports = {
                 Unsubscribe_Preferences: unsub_pref,
             },
         };
-        const res = sgMail.send(msg);
+        const res = await sgMail.send(msg);
         return res[0].statusCode;
     },
 };

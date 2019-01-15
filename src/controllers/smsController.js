@@ -12,7 +12,7 @@ const client = require('twilio')(TWILIO_ACCOUNT_SID, TWILIO_API_KEY);
 const hostNr = env !== 'development' ? '+15005550006' : '+4759447127';
 
 module.exports = {
-    updatedWarningStatus(telephone, title, status, comment) {
+    async updatedWarningStatus(telephone, title, status, comment) {
         const msg = {
             body:
                 title +
@@ -23,7 +23,7 @@ module.exports = {
             to: telephone,
             from: hostNr,
         };
-        const res = client.messages.create(msg);
+        const res = await client.messages.create(msg);
         if (res.errorCode == null) {
             return 200;
         } else {
