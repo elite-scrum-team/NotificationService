@@ -16,13 +16,12 @@ router.post('/register', async (req, res) => {
 });
 
 router.post('/newpassword', async (req, res) => {
-    const payload = req.body.payload;
-    if (payload.email) {
+    if (req.body.email) {
         await res.send(
             await controller.sendNewPassword(
-                payload.email,
-                payload.name,
-                payload.password
+                req.body.email,
+                req.body.name,
+                req.body.password
             )
         );
     } else {
@@ -31,14 +30,13 @@ router.post('/newpassword', async (req, res) => {
 });
 
 router.post('/updatedwarningstatus', async (req, res) => {
-    const payload = req.body.payload;
-    if (payload.email) {
+    if (req.body.email) {
         await res.send(
             await controller.updatedWarningStatus(
-                payload.email,
-                payload.title,
-                payload.status,
-                payload.comment
+                req.body.email,
+                req.body.title,
+                req.body.status,
+                req.body.comment
             )
         );
     } else {
@@ -47,14 +45,13 @@ router.post('/updatedwarningstatus', async (req, res) => {
 });
 
 router.post('/newcomment', async (req, res) => {
-    const payload = req.body.payload;
-    if (payload.email) {
+    if (req.body.email) {
         await res.send(
             await controller.newWarningComment(
-                payload.email,
-                payload.title,
-                payload.name,
-                payload.comment
+                req.body.email,
+                req.body.title,
+                req.body.name,
+                req.body.comment
             )
         );
     } else {
