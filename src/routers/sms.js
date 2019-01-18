@@ -11,9 +11,9 @@ router.post('/updatedwarningstatus', async (req, res) => {
                 payload.status,
                 payload.comment
             )
-        )
-      } else {
-        await res.send(400)
+        );
+    } else {
+        await res.send(400);
     }
 });
 
