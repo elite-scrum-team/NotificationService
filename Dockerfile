@@ -1,4 +1,4 @@
-FROM node:10.10-alpine
+FROM circleci/node:10.10
 
 WORKDIR /usr/src/app
 

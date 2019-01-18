@@ -21,5 +21,6 @@ app.get('/metrics', async (req, res) => {
 
 app.use('/api/v1/email', require('./routers/email'));
 app.use('/api/v1/sms', require('./routers/sms'));
+app.use('/api/v1/stats', require('./routers/stats'));
 
 app.listen(8080, () => console.log('listening on port 8080'));
