@@ -2,13 +2,12 @@ const router = require('express').Router();
 const controller = require('../controllers/emailController');
 
 router.post('/register', async (req, res) => {
-    const payload = req.body.payload;
-    if (payload.email) {
+    if (req.body.email) {
         await res.send(
             await controller.sendRegistrationEmail(
-                payload.email,
-                payload.name,
-                payload.password
+                req.body.email,
+                req.body.name,
+                req.body.password
             )
         );
     } else {
