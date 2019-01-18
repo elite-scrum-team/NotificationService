@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 
 const bodyParser = require('body-parser');
+const morgan = require('morgan');
 
 const client = require('prom-client');
 const collectDefaultMetrics = client.collectDefaultMetrics;
