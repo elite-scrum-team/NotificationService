@@ -19,7 +19,7 @@ app.get('/metrics', async (req, res) => {
     await res.end(client.register.metrics());
 });
 
-app.use('api/v1/email', require('./routes/email'));
-app.use('api/v1/sms', require('./routes/sms'));
+app.use('/api/v1/email', require('./routes/email'));
+app.use('/api/v1/sms', require('./routes/sms'));
 
 app.listen(8080, () => console.log('listening on port 8080'));
