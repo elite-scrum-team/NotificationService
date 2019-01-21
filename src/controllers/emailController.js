@@ -39,6 +39,23 @@ module.exports = {
     },
 
     async updatedWarningStatus(email, title, status, comment) {
+        switch (status) {
+            case 0:
+                status = 'Unreviewed';
+                break;
+            case 1:
+                status = 'Acknowledged';
+                break;
+            case 2:
+                status = 'Work in progress';
+                break;
+            case 3:
+                status = 'Finished';
+                break;
+            case 4:
+                status = 'Disabled';
+                break;
+        }
         const msg = {
             to: email,
             from: host,
@@ -51,7 +68,7 @@ module.exports = {
                 Unsubscribe_Preferences: unsub_pref,
             },
         };
-        const res = await sgMail.send(msg);
+        const res = await sgMail.sendMultiple(msg);
         return res[0].statusCode;
     },
 
@@ -64,6 +81,23 @@ module.exports = {
                 Warning_Title: title,
                 Name_Commenter: name,
                 Warning_Comment: comment,
+                Unsubscribe_Link: unsub_link,
+                Unsubscribe_Preferences: unsub_pref,
+            },
+        };
+        const res = await sgMail.sendMultiple(msg);
+        return res[0].statusCode;
+    },
+
+    async newContract(email, title, name, details) {
+        const msg = {
+            to: email,
+            from: host,
+            templateId: 'd-a4e97543cd0b4dae9fd040a98a3767ee',
+            dynamic_template_data: {
+                Warning_Title: title,
+                Company: name,
+                Warning_Details: details,
                 Unsubscribe_Link: unsub_link,
                 Unsubscribe_Preferences: unsub_pref,
             },

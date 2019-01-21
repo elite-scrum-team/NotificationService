@@ -59,4 +59,19 @@ router.post('/newcomment', async (req, res) => {
     }
 });
 
+router.post('/newcontract', async (req, res) => {
+    if (req.body.email) {
+        await res.send(
+            await controller.newContract(
+                req.body.email,
+                req.body.title,
+                req.body.name,
+                req.body.details
+            )
+        );
+    } else {
+        await res.send(400);
+    }
+});
+
 module.exports = router;

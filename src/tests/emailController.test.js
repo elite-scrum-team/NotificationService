@@ -39,4 +39,14 @@ describe('emailController test', () => {
         );
         expect(res).toBe(202);
     });
+
+    test('Testing newContract', async () => {
+        const res = await controller.newContract(
+            'nikolai.holt@gmail.com',
+            'Hull i veien',
+            'SuperGoodBuilders',
+            'Om dere kunne fikset dette fort hadde det vært fint'
+        );
+        expect(res).toBe(202);
+    });
 });
