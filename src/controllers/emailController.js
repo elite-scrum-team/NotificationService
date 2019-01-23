@@ -77,7 +77,6 @@ module.exports = {
             templateId: 'd-472fb23477fa4c51b3602c9b516c6dc2',
             dynamic_template_data: {
                 Warning_Title: title,
-                Name_Commenter: name,
                 Warning_Comment: comment,
                 Unsubscribe_Link: unsub_link,
                 Unsubscribe_Preferences: unsub_pref,

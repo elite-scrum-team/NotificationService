@@ -50,7 +50,6 @@ router.post('/newcomment', async (req, res) => {
             await controller.newWarningComment(
                 req.body.emails,
                 req.body.title,
-                req.body.name,
                 req.body.comment
             )
         );
