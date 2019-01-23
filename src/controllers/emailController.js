@@ -6,7 +6,7 @@ const unsub_link = 'imgur.com';
 const unsub_pref = 'nrk.no';
 
 module.exports = {
-    async sendRegistrationEmail(email, name, password) {
+    async sendRegistrationEmail(email, password) {
         const msg = {
             to: email,
             from: host,
@@ -22,7 +22,7 @@ module.exports = {
         return res[0].statusCode;
     },
 
-    async sendNewPassword(email, name, password) {
+    async sendNewPassword(email, password) {
         const msg = {
             to: email,
             from: host,
