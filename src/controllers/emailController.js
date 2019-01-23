@@ -12,7 +12,6 @@ module.exports = {
             from: host,
             templateId: 'd-63fa4e52b76545f2bbe6f978350bffe0',
             dynamic_template_data: {
-                Recipient_Name: name,
                 Generated_Password: password,
                 Unsubscribe_Link: unsub_link,
                 Unsubscribe_Preferences: unsub_pref,
@@ -28,7 +27,6 @@ module.exports = {
             from: host,
             templateId: 'd-eecfa27c0b85422f90d97ef80acbd072',
             dynamic_template_data: {
-                Recipient_Name: name,
                 Generated_Password: password,
                 Unsubscribe_Link: unsub_link,
                 Unsubscribe_Preferences: unsub_pref,
