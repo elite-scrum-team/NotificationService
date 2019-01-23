@@ -30,10 +30,10 @@ router.post('/newpassword', async (req, res) => {
 });
 
 router.post('/updatedwarningstatus', async (req, res) => {
-    if (req.body.email) {
+    if (req.body.emails) {
         await res.send(
             await controller.updatedWarningStatus(
-                req.body.email,
+                req.body.emails,
                 req.body.title,
                 req.body.status,
                 req.body.comment
@@ -45,10 +45,10 @@ router.post('/updatedwarningstatus', async (req, res) => {
 });
 
 router.post('/newcomment', async (req, res) => {
-    if (req.body.email) {
+    if (req.body.emails) {
         await res.send(
             await controller.newWarningComment(
-                req.body.email,
+                req.body.emails,
                 req.body.title,
                 req.body.name,
                 req.body.comment
