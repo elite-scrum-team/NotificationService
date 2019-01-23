@@ -38,7 +38,7 @@ module.exports = {
         return res[0].statusCode;
     },
 
-    async updatedWarningStatus(email, title, status, comment) {
+    async updatedWarningStatus(emails, title, status, comment) {
         switch (status) {
             case 0:
                 status = 'Unreviewed';
@@ -57,7 +57,7 @@ module.exports = {
                 break;
         }
         const msg = {
-            to: email,
+            to: emails,
             from: host,
             templateId: 'd-87ecb13d6be24b5eb1a321e61121b8c6',
             dynamic_template_data: {
@@ -89,9 +89,9 @@ module.exports = {
         return res[0].statusCode;
     },
 
-    async newContract(emails, title, name, details) {
+    async newContract(email, title, name, details) {
         const msg = {
-            to: emails,
+            to: email,
             from: host,
             templateId: 'd-a4e97543cd0b4dae9fd040a98a3767ee',
             dynamic_template_data: {
