@@ -72,9 +72,9 @@ module.exports = {
         return res[0].statusCode;
     },
 
-    async newWarningComment(email, title, name, comment) {
+    async newWarningComment(emails, title, comment) {
         const msg = {
-            to: email,
+            to: emails,
             from: host,
             templateId: 'd-472fb23477fa4c51b3602c9b516c6dc2',
             dynamic_template_data: {
@@ -89,9 +89,9 @@ module.exports = {
         return res[0].statusCode;
     },
 
-    async newContract(email, title, name, details) {
+    async newContract(emails, title, name, details) {
         const msg = {
-            to: email,
+            to: emails,
             from: host,
             templateId: 'd-a4e97543cd0b4dae9fd040a98a3767ee',
             dynamic_template_data: {
