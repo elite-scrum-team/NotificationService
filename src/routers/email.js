@@ -1,6 +1,25 @@
 const router = require('express').Router();
 const controller = require('../controllers/emailController');
 
+/**
+ * Email routers
+ * @module routers/email
+ * @requires express
+ * @requires controller
+ */
+
+/**
+ * Express route for email
+ * @namespace emailRouter
+ */
+
+/**
+ * Router for when someone has registered a new user
+ * @function
+ * @name POST-RegisterUserEmail
+ * @param {string} path - "/register"
+ * @param {callback} route - The route
+ */
 router.post('/register', async (req, res) => {
     if (req.body.email) {
         await res.send(
@@ -15,6 +34,13 @@ router.post('/register', async (req, res) => {
     }
 });
 
+/**
+ * Router for when someone has lost their password
+ * @function
+ * @name POST-NewPassword
+ * @param {string} path - "/newpassword"
+ * @param {callback} route - The route
+ */
 router.post('/newpassword', async (req, res) => {
     if (req.body.email) {
         await res.send(
@@ -29,6 +55,13 @@ router.post('/newpassword', async (req, res) => {
     }
 });
 
+/**
+ * Router for when a warning status has been updated
+ * @function
+ * @name POST-UpdatedWarningStatus
+ * @param {string} path - "/updatedwarningstatus"
+ * @param {callback} route - The route
+ */
 router.post('/updatedwarningstatus', async (req, res) => {
     if (req.body.emails) {
         await res.send(
@@ -44,6 +77,13 @@ router.post('/updatedwarningstatus', async (req, res) => {
     }
 });
 
+/**
+ * Router for when someone has commented on a warning
+ * @function
+ * @name POST-NewComment
+ * @param {string} path - "/newcomment"
+ * @param {callback} route - The route
+ */
 router.post('/newcomment', async (req, res) => {
     if (req.body.emails) {
         await res.send(
@@ -58,6 +98,13 @@ router.post('/newcomment', async (req, res) => {
     }
 });
 
+/**
+ * Router for when someone has recieved a new contract
+ * @function
+ * @name POST-NewContract
+ * @param {string} path - "/newcontract"
+ * @param {callback} route - The route
+ */
 router.post('/newcontract', async (req, res) => {
     if (req.body.email) {
         await res.send(
